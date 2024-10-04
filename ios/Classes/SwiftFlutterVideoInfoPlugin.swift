@@ -34,7 +34,6 @@ public class SwiftFlutterVideoInfoPlugin: NSObject, FlutterPlugin {
     let isFileExist = fileManager.fileExists(atPath: path)
 
     let creationDate = asset.creationDate?.dateValue
-    asset.
 
     let formatter = DateFormatter()
     formatter.locale = Locale.current
