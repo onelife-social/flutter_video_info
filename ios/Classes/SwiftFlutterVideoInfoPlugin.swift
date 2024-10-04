@@ -37,6 +37,7 @@ public class SwiftFlutterVideoInfoPlugin: NSObject, FlutterPlugin {
 
     let formatter = DateFormatter()
     formatter.locale = Locale.current
+    formatter.timeZone = TimeZone(abbreviation: "UTC")
     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     let durationTime = round(CMTimeGetSeconds(asset.duration) * 1000)
 
