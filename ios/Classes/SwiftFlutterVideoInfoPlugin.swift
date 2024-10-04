@@ -62,7 +62,9 @@ public class SwiftFlutterVideoInfoPlugin: NSObject, FlutterPlugin {
     jsonObj["mimetype"] = mimetype
     jsonObj["author"] = ""
     if let date = creationDate {
+      print("TEST iOS: \(date)")
       jsonObj["date"] = formatter.string(from: date)
+      print("TEST iOS 2 formatted: \(jsonObj["date"])")
     } else {
       jsonObj["date"] = ""
     }
