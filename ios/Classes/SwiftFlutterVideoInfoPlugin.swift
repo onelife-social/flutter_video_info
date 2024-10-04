@@ -34,6 +34,7 @@ public class SwiftFlutterVideoInfoPlugin: NSObject, FlutterPlugin {
     let isFileExist = fileManager.fileExists(atPath: path)
 
     let creationDate = asset.creationDate?.dateValue
+    asset.
 
     let formatter = DateFormatter()
     formatter.locale = Locale.current
@@ -62,13 +63,14 @@ public class SwiftFlutterVideoInfoPlugin: NSObject, FlutterPlugin {
     jsonObj["mimetype"] = mimetype
     jsonObj["author"] = ""
     if let date = creationDate {
-      jsonObj["date"] = formatter.string(from: date)
+      jsonObj["date"] = date //formatter.string(from: date)
     } else {
       jsonObj["date"] = ""
     }
     jsonObj["width"] = size?.width
     jsonObj["height"] = size?.height
     jsonObj["location"] = asset.metadata.first(where: { $0.identifier == .quickTimeMetadataLocationISO6709 })?.value?.description
+    jsonObj["location"] = "testing"
     jsonObj["framerate"] = fps
     jsonObj["duration"] = durationTime
     jsonObj["filesize"] = fileSize
