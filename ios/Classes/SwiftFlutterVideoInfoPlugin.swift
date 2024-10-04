@@ -63,7 +63,6 @@ public class SwiftFlutterVideoInfoPlugin: NSObject, FlutterPlugin {
     jsonObj["author"] = ""
     if let date = creationDate {
       jsonObj["date"] = formatter.string(from: date)
-      jsonObj["date"] = creationDate
     } else {
       jsonObj["date"] = ""
     }
