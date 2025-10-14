@@ -19,7 +19,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * FlutterVideoInfoPlugin
@@ -37,10 +36,7 @@ public class FlutterVideoInfoPlugin implements FlutterPlugin, MethodCallHandler 
         context = flutterPluginBinding.getApplicationContext();
     }
 
-    public static void registerWith(Registrar registrar_) {
-        final MethodChannel channel = new MethodChannel(registrar_.messenger(), "flutter_video_info");
-        channel.setMethodCallHandler(new FlutterVideoInfoPlugin());
-    }
+    // V1 embedding registration removed; this plugin uses Flutter v2 embedding via FlutterPlugin
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
